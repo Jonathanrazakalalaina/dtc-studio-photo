@@ -1,0 +1,111 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f1f1f1;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+    color: #333;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+form {
+    margin: 0 auto;
+    width: 50%;
+    max-width: 800px;
+    min-width: 400px;
+}
+
+.affichage {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+    margin-bottom: 4rem;
+    gap: 1rem;
+}
+
+input {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #333;
+}
+
+input:focus {
+    border-bottom-color: #1fbbeb;
+}
+
+h2 {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.affichage > div {
+    height: 200px;
+    overflow-y: hidden;
+    box-shadow:  1px 2px 3px #ccc;
+    border-radius: 1rem;
+}
+
+.affichage > div:hover {
+    box-shadow:  1px 2px 10px #333;
+    cursor: pointer;
+}
+
+.suggestions {
+    width: 100%;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.suggestions button {
+    display: block;
+    border: 1px solid black;
+    padding: 0.5rem;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.suggestions button:hover {
+    background: #000;
+    color: #fff;
+    box-shadow: 1px 2px 10px #333;
+}
+
+@keyframes rotate{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+.loader{
+    padding: 15px;
+    border: 3px solid #333;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: rotate 1s infinite linear;
+}
