@@ -1,8 +1,7 @@
-const accessKey = 'FTVBzne1a-huyhiMzGDNTnlGWeVqZ_zB5U7F2jw--Cw'
-const APICALL = `https://api.unsplash.com/search/photos?client_id=${accessKey}&query=`
+const APICALL = `https://api.unsplash.com/search/photos?client_id=FTVBzne1a-huyhiMzGDNTnlGWeVqZ_zB5U7F2jw--Cw&query`
 
 const affichage = document.querySelector('.affichage');
-const form = document.querySelector('.form-github-recherche');
+const form = document.querySelector('.form-photo-recherche');
 const inpRecherche = document.querySelector('.inp-recherche');
 
 // btns
@@ -13,7 +12,7 @@ const wallP = document.querySelector('.wallP')
 const landS = document.querySelector('.landS')
 const cartoon = document.querySelector('.cartoon')
 
-const dataGitHub =  async (keyword) => {
+const dataUnsplash =  async (keyword) => {
 
     const reponse = await fetch(`${APICALL}=${keyword}`)
     const data = await reponse.json();
@@ -23,25 +22,25 @@ const dataGitHub =  async (keyword) => {
 
 }
 
-dataGitHub('nature');
+dataUnsplash('nature');
 
 mada.addEventListener('click', () => {
-    dataGitHub('madagascar');
+    dataUnsplash('madagascar');
 })
 music.addEventListener('click', () => {
-    dataGitHub('music');
+    dataUnsplash('music');
 })
 tech.addEventListener('click', () => {
-    dataGitHub('technology');
+    dataUnsplash('technology');
 })
 wallP.addEventListener('click', () => {
-    dataGitHub('wallpaper');
+    dataUnsplash('wallpaper');
 })
 landS.addEventListener('click', () => {
-    dataGitHub('landscape');
+    dataUnsplash('landscape');
 })
 cartoon.addEventListener('click', () => {
-    dataGitHub('cartoon');
+    dataUnsplash('cartoon');
 })
 
 const displayData = (allData) => {
@@ -50,7 +49,7 @@ const displayData = (allData) => {
         .map(
             (data) =>
                 `
-                   <div>
+                   <div class="img-container">
                         <img src="${data.urls.small}" alt="" />
                    </div>
                 `
@@ -65,7 +64,7 @@ form.addEventListener('submit', (e) => {
 
     if(inpRecherche.value.length > 0) {
 
-        dataGitHub(inpRecherche.value);
+        dataUnsplash(inpRecherche.value);
         inpRecherche.value = '';
 
     }
